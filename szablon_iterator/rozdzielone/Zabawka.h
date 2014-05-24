@@ -1,0 +1,25 @@
+# include <iostream>
+# include <cstring>
+#pragma once
+
+
+
+class Zabawka
+{
+	private: 
+		std::string nazwa;
+		std::string adres;
+	public:
+		Zabawka(); // domyslny
+		Zabawka(std::string nazwa1, std::string adres1); // z parametrami
+		Zabawka(const Zabawka & k); // kopiujacy
+		
+		// przeciazenia operatorow
+		bool operator!=(const Zabawka & a);//+
+		bool operator==(const Zabawka & a);//+
+		Zabawka & operator=(Zabawka & a);//+
+		friend std::ostream & operator<< ( std::ostream & a, const  Zabawka & b);//+
+		friend std::istream & operator>> ( std::istream & a, Zabawka & b);//+
+		Zabawka & change();
+};
+

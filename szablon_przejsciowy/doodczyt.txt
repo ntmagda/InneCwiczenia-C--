@@ -1,0 +1,11 @@
+1
+nazwa1
+adres1
+1
+nazwa2
+adres2
+1
+nazwa3
+adres3
+0
+

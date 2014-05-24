@@ -1,0 +1,26 @@
+1 sem
+
+unix
+jezyki i metody programowania
+
+2 sem
+
+logika
+LateX
+jezyki imetody programowania 2
+grafika
+algorytmy
+
+3 sem
+
+elektronika cyfr
+analiza num
+programowanie obiektowe
+systemy dynamiczne
+jezyki i technologie webowe
+architektury komputerow
+srodowiska i narzedzia wytworcze ...
+
+
+
+

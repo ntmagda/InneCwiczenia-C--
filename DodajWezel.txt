@@ -1,0 +1,25 @@
+static void DodajWezel(Wezel * nowy, Wezel * korzen)
+
+	{
+		if(NaLewo(&nowy->pozycja, &korzen->pozycja))
+		{
+			if(korzen->lewy= NULL); // puste poddrzewo
+			korzen->lewy = nowy;
+		else
+			DodajWezel( nowy, korzen->lewy);
+		}
+
+		else if (NaPrawo(&nowy->pozycja, &korzen->pozycja))
+		{
+
+		if(korzen->prawy= NULL) //puste poddrzewo prawe
+		korzen-prawy= nowy;
+
+		else  DodajWezel (nowy, korzen-prawy);
+
+		}
+
+
+	
+	}
+

@@ -1,0 +1,64 @@
+# include <iostream>
+# include <cstring>
+
+	Zabawka::Zabawka() // konstruktor domyslny
+	{
+
+		nazwa = "brak nazwy";
+		adres = "brak adresu";
+	}
+
+	Zabawka::Zabawka(const Zabawka & k) // konstruktor kopiujacy
+	{
+		nazwa= k.nazwa;
+		adres = k.adres;
+	}
+
+	bool operator!=(const Zabawka & a)
+	{
+		if ( nazwa== a.nazwa && adres==a.adres) return false;
+		else return true;
+	}
+
+	bool operator==(const Zabawka & a)
+	{
+		if(nazwa==a.nazwa && adres==a.adres) return true;
+		else return false;
+	
+	}
+
+	Zabawka::Zabawka & operator=(const Zabawka & a)
+	{
+		nazwa=a.nazwa;
+		adres=a.adres;	
+	}	
+
+	ostream & operator<< ( ostream & a, const  Zabawka & b);
+	{
+		a << " Nazwa firmy: " << " ";
+		a << b.nazwa;
+		a << " Adres firmy: " << " ";
+		a << b.adres;
+
+	return a;
+
+
+	}
+
+	istream & operator>>(istream &a, const Zabawka & b)
+	{
+			a>>b.nazwa;
+			a>>b.adres;
+
+	return a;
+
+	}
+
+
+
+
+
+
+
+
+

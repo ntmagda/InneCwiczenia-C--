@@ -1,0 +1,13 @@
+
+static bool NaLewo(const Pozycja * p1, const Pozycja * p2)
+{
+
+	int porown1;
+	if ((porown1=strcmp(p1->imie, p2->imie))<0)
+		return true;	
+	else if (porown1 == 0 && strcmp(p1->gatunek, p2->gatunek)<0)
+		return true;
+	else 
+		return false;
+
+}

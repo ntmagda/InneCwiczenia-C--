@@ -1,0 +1,95 @@
+# include <iostream>
+# include <cstring>
+# include <string>
+# include "Zabawka.h"
+
+	Zabawka::Zabawka() // konstruktor domyslny
+	{
+
+		nazwa = "brak nazwy";
+		adres = "brak adresu";
+	}
+
+	Zabawka::Zabawka(std::string nazwa1, std::string adres1)
+	{
+		nazwa=nazwa1;
+		adres=adres1;
+
+	}
+	Zabawka::Zabawka(const Zabawka & k) // konstruktor kopiujacy
+	{
+		nazwa= k.nazwa;
+		adres = k.adres;
+	}
+
+	bool Zabawka::operator!=(const Zabawka & a)
+	{
+		if ( nazwa== a.nazwa && adres==a.adres) return false;
+		else return true;
+	}
+
+	bool Zabawka::operator==(const Zabawka & a)
+	{
+		if(nazwa==a.nazwa && adres==a.adres) return true;
+		else return false;
+	
+	}
+
+	Zabawka & Zabawka::operator=(const Zabawka & a)
+	{
+		nazwa=a.nazwa;
+		adres=a.adres;	
+	}	
+
+	ostream & operator<< ( ostream & a, const  Zabawka & b)
+	{
+		a << " Nazwa sklepu: " << " ";
+		a << b.nazwa << "  #  ";
+		a << " Adres sklepu: " << " ";
+		a << b.adres;
+
+	return a;
+	}
+	istream & operator>> ( istream & a, Zabawka & b)
+	{
+
+		cout << endl <<" Podaj nazwe sklepu: " << endl;
+		getline(a,b.nazwa);
+		cout << endl << "Podaj adres sklepu: " << endl;
+		getline(a,b.adres);
+
+	return a;
+
+	}
+
+	Zabawka & Zabawka::change()
+	{
+
+		cout << " Czy chcesz zmienic nazwe sklepu ? <TAK - wcisnij 1/Nie - wcisnij 0> " << endl;
+		int odp;
+		cin>>odp;
+		cin.get();
+		if(odp)
+		{
+			cout << "Podaj nowa nazwe sklepu " << endl;
+			string nowy;
+			cin >> nowy;
+			nazwa=nowy; // zmiana nazwy sklepu
+
+		}
+		cout << " Czy chcesz zmienic adres sklepu ? <TAK - wcisnij 1/ Nie wcisnij 0> " << endl;
+		int odp1;
+		cin>> odp1
+		cin.get();
+		if (odp1 )
+		{
+			cout << " Podaj nowy adres sklepu " << endl;
+			string adresn;
+			cin >> adresn;	
+			adres=adresn;
+			
+		}
+		else cout << " Nic nie chcesz zmienic jednak ?. To dowidzenia. " << endl;
+
+
+	}

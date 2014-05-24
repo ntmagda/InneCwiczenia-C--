@@ -1,0 +1,86 @@
+# include <stdio.h>
+#define MAXPOZ 10;
+
+void InicjujDrzewo(Drzewo *wdrzewo){
+
+	wdrzewo->korzen= NULL;
+	wdrzewo->rozmiar=0;
+
+}
+
+bool PusteDrzewo( Drzewo *wdrzewo){
+
+	if(wdrzewo->korzen= NULL)
+	return true;
+	else 
+	return false;
+
+}
+
+bool PelneDrzewo( Drzewo *wdrzewo){
+
+	if(wdrzewo->rozmiar=MAXPOZ);
+	printf( " Drzewo jest przepelnione");
+	return true
+	else
+	return false;
+
+
+}
+
+int LiczbaPozycji ( Drzewo *wdrzewo){
+
+	return wdrzewo->rozmiar;
+}
+
+bool DodajPozycje ( Pozycja *wp, Drzewo *wdrzewo);
+{
+		Wezel * nowy;
+	if (PelneDrzewo(wdrzewo))
+	{
+		printf( "Drzewo jest pełne\n");
+		return false;	
+	}
+
+	if (SzukajPozycji(wp, drzewo).dziecko != NULL)
+	{
+		printf ( " pozycja juz istnieje " );
+		return false;	
+	}
+	nowy= UtworzWezel(wp);
+	if ( nowy == NULL)
+	{
+		printf ( " Nie mozna utworzyc wezla, blad alokacji ");
+		return false;
+	}
+
+	wdrzewo->rozmiar++
+	if(wdrzewo->korzen== NULL)
+		wdrzewo->korzen= nowy;
+	else
+		DodajWezel(nowy, wdrzewo->korzen);
+	return 0;
+
+
+
+
+}
+
+static Wezel* UtworzWezel( Pozycja *wp){
+
+	Wezel* nowy;
+	nowy= (Wezel*) malloc (sizeof(Wezel));
+	if(nowy== NULL) printf("Blad alokacji")
+	else 
+	{
+		nowy->pozycja=*wp;
+		nowy->lewy= NULL;
+		nowy->prawy=NULL;
+	}
+
+return 0;
+
+} 
+
+
+

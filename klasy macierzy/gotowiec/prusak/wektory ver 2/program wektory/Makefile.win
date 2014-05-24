@@ -1,0 +1,32 @@
+# Project: Projekt1
+# Makefile created by Dev-C++ 5.2.0.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = wektory.o wektory_test.o $(RES)
+LINKOBJ  = wektory.o wektory_test.o $(RES)
+LIBS     = -L"C:/Program Files/Dev-Cpp/MinGW32/lib" -static-libstdc++ -static-libgcc  
+INCS     = -I"C:/Program Files/Dev-Cpp/MinGW32/include" 
+CXXINCS  = -I"C:/Program Files/Dev-Cpp/MinGW32/include" 
+BIN      = Projekt1.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS   = $(INCS)  
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Projekt1.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Projekt1.exe" $(LIBS)
+
+wektory.o: wektory.cpp
+	$(CPP) -c wektory.cpp -o wektory.o $(CXXFLAGS)
+
+wektory_test.o: wektory_test.cpp
+	$(CPP) -c wektory_test.cpp -o wektory_test.o $(CXXFLAGS)

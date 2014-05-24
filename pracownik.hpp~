@@ -1,0 +1,68 @@
+# include <iostream>
+# include <string>
+using namespace std;
+
+class Pracownik{ // klasa bazowa abstrakcyjna
+
+	private:
+		const string imie;
+		const string nazwisko;
+		long int NIP;
+		long int PESEL;
+	protected: // trzeba miec jakos dostep do skladowych klasy bazowej 
+		const string imie_1(){ return imie;};
+		const string nazwisko_1(){ return nazwisko;};
+		long int NIP_1(){return NIP;};
+		long int PESEL_1(){ return PESEL;};
+	public:
+		Pracownik(const string s = " brak", const string na = " brak ", long int ni = 0, long int pes = 0);
+		virtual ~Pracownik() {} // destruktor wirtualny
+		virtual double wylicz_zarobki() const = 0; // funkcja czysto wirtualna
+		virtual void print(); // funkcja wirtualna - bedzie inna dla kazdej klasy pochodnej
+
+
+};
+
+
+class Stali : public Pracownik{
+
+
+	private:
+		int pensja;
+	public:
+		virtual double wylicz_zarobki() const;
+		virtual void print();
+		Stali(const string s = " brak", const string na = " brak ", long int ni = 0, long int pes = 0, int pen = 0);
+};
+
+
+
+class Zlecenie : public Pracownik{
+
+	private:
+		int stawkah;
+		int liczba_godzin;
+		
+	public:
+		virtual double wylicz_zarobki() const;
+		virtual void print();
+		Zlecenie(const string s = " brak", const string na = " brak ", long int ni = 0, long int pes = 0, int staw = 0, int licz=0);
+
+};
+
+
+class Handlowiec : public Pracownik{
+
+	private:
+		long int sprzedaz;
+		
+	public:
+		virtual double wylicz_zarobki();
+		virtual void print();
+		Handlowiec(const string s = " brak", const string na = " brak ", long int ni = 0, long int pes = 0, int sprz = 0);
+
+};
+
+
+
+
